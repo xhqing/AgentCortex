@@ -10,7 +10,11 @@ The project contains the following files:
 |------|-------------|
 | `toolCallingRulesV0.md` | Initial version of the rules (English) |
 | `toolCallingRulesV0CN.md` | Initial version of the rules (Chinese translation) |
+| `toolCallingRulesV1.md` | Optimized V1 version of the rules (English) |
 | `toolCallingRulesV1CN.md` | Optimized V1 version of the rules (Chinese) |
+| `README.md` | Project documentation (English) |
+| `README_cn.md` | Project documentation (Chinese) |
+| `LICENSE` | AGPL-3.0 license file |
 
 ---
 

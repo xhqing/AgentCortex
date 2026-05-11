@@ -10,7 +10,11 @@
 |------|------|
 | `toolCallingRulesV0.md` | 初始版本规则（英文） |
 | `toolCallingRulesV0CN.md` | 初始版本规则（中文翻译） |
+| `toolCallingRulesV1.md` | 优化后的 V1 版本规则（英文） |
 | `toolCallingRulesV1CN.md` | 优化后的 V1 版本规则（中文） |
+| `README.md` | 项目说明文档（英文） |
+| `README_cn.md` | 项目说明文档（中文） |
+| `LICENSE` | AGPL-3.0 许可证文件 |
 
 ---
 
