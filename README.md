@@ -1,26 +1,40 @@
-# Tool Calling Rules
+# Rules4Agents
 
 ## Project Introduction
 
-This project defines a set of rules that constrain how large language models (LLMs) invoke external tools. These rules aim to reduce common issues during tool calling — such as parameter formatting errors, inappropriate tool selection, and inefficient error recovery — thereby improving the accuracy and efficiency of tool calls.
+This project curates a collection of rules designed for agents. These rules aim to regulate and enhance agent behavior across various scenarios — covering tool calling, deep reasoning, and more — thereby improving the overall capability and reliability of agents.
 
-The project contains the following files:
+The project currently includes the following rules:
 
-| File | Description |
-|------|-------------|
-| `toolCallingRulesV0.md` | Initial version of the rules (English) |
-| `toolCallingRulesV0CN.md` | Initial version of the rules (Chinese translation) |
-| `toolCallingRulesV1.md` | Optimized V1 version of the rules (English) |
-| `toolCallingRulesV1CN.md` | Optimized V1 version of the rules (Chinese) |
-| `README.md` | Project documentation (English) |
-| `README_cn.md` | Project documentation (Chinese) |
-| `LICENSE` | AGPL-3.0 license file |
+### Tool Calling Rules
+
+Rules that constrain how large language models (LLMs) invoke external tools. They aim to reduce common issues during tool calling — such as parameter formatting errors, inappropriate tool selection, and inefficient error recovery — thereby improving the accuracy and efficiency of tool calls.
+
+### Deep Reasoning Rules
+
+Rules that activate an agent's deepest reasoning potential. They require the agent to bypass surface-level heuristic patterns, perform multi-layered decomposition, multi-perspective synthesis, and rigorous self-counterargument, thereby producing more rigorous and in-depth reasoning results.
 
 ---
 
-## V1 Optimization Rationale
+## Project Files
 
-The V1 version introduces systematic improvements over V0, as detailed below:
+| File | Description |
+|------|-------------|
+| `toolCallingRulesV0.md` | Tool calling rules initial version (English) |
+| `toolCallingRulesV0CN.md` | Tool calling rules initial version (Chinese translation) |
+| `toolCallingRulesV1.md` | Tool calling rules V1 version (English) |
+| `toolCallingRulesV1CN.md` | Tool calling rules V1 version (Chinese) |
+| `dsv4proMaxThinkingRules.md` | Deep reasoning rules (English) |
+| `dsv4proMaxThinkingRules_cn.md` | Deep reasoning rules (Chinese) |
+| `README.md` | Project documentation (English) |
+| `README_cn.md` | Project documentation (Chinese) |
+| `LICENSE` | CC BY-SA 4.0 license file |
+
+---
+
+## Tool Calling Rules V1 Optimization Rationale
+
+The V1 version of the tool calling rules introduces systematic improvements over V0, as detailed below:
 
 ### 1. Added "Pre-Call Preparation" Category
 
@@ -86,13 +100,12 @@ V1 adds code examples and comparison tables at key rules, making the rules more 
 
 ## LICENSE
 
-This project is released under the [GNU Affero General Public License v3.0 (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.html).
+This project is released under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license.
 
-AGPL-3.0 is a supplementary version of GPL-3.0. Its core requirements include:
+CC BY-SA 4.0 is a copyleft license suitable for creative works and documentation. Its core requirements include:
 
-- **Free use and distribution**: Anyone is free to use, modify, and distribute the code of this project.
-- **Copyleft**: Any derivative works based on this project must likewise be released under the AGPL-3.0 license.
-- **Network interaction clause**: If users interact with modified software based on this project over a network, the modified source code must be made available to those users. This is the key distinction between AGPL and GPL.
-- **Source code provision obligation**: When distributing or providing software based on this project over a network, the complete source code must be provided simultaneously.
+- **Attribution (BY)**: You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- **ShareAlike (SA)**: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+- **Free to share and adapt**: Anyone is free to copy, redistribute, remix, transform, and build upon the material for any purpose, even commercially.
 
-See the [LICENSE](./LICENSE) file or visit the [AGPL-3.0 official page](https://www.gnu.org/licenses/agpl-3.0.html) for details.
+See the [LICENSE](./LICENSE) file or visit the [CC BY-SA 4.0 official page](https://creativecommons.org/licenses/by-sa/4.0/) for details.

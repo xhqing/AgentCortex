@@ -1,26 +1,40 @@
-# Tool Calling Rules
+# Rules4Agents
 
 ## 项目介绍
 
-本项目定义了一套约束大语言模型（LLM）调用外部工具的规则。这些规则旨在减少 LLM 在工具调用过程中常见的参数格式错误、工具选择不当、错误恢复低效等问题，从而提升工具调用的准确率和效率。
+本项目收录了一套面向智能体（Agent）的规则集合。这些规则旨在规范和增强智能体在各类场景下的行为表现，涵盖工具调用、深度推理等多个维度，从而提升智能体的整体能力与可靠性。
 
-项目包含以下文件：
+目前项目包含以下规则：
 
-| 文件 | 说明 |
-|------|------|
-| `toolCallingRulesV0.md` | 初始版本规则（英文） |
-| `toolCallingRulesV0CN.md` | 初始版本规则（中文翻译） |
-| `toolCallingRulesV1.md` | 优化后的 V1 版本规则（英文） |
-| `toolCallingRulesV1CN.md` | 优化后的 V1 版本规则（中文） |
-| `README.md` | 项目说明文档（英文） |
-| `README_cn.md` | 项目说明文档（中文） |
-| `LICENSE` | AGPL-3.0 许可证文件 |
+### 工具调用规则（Tool Calling Rules）
+
+约束大语言模型（LLM）调用外部工具的规则，旨在减少 LLM 在工具调用过程中常见的参数格式错误、工具选择不当、错误恢复低效等问题，从而提升工具调用的准确率和效率。
+
+### 深度推理规则（Deep Reasoning Rules）
+
+激活智能体最深层次推理潜能的规则，要求智能体绕过表层启发式模式，对问题进行多层次分解、多视角综合和严格的自我反驳，从而产出更严谨、更深入的推理结果。
 
 ---
 
-## V1 优化理由
+## 项目文件
 
-V1 版本在 V0 的基础上进行了系统性优化，具体如下：
+| 文件 | 说明 |
+|------|------|
+| `toolCallingRulesV0.md` | 工具调用规则初始版本（英文） |
+| `toolCallingRulesV0CN.md` | 工具调用规则初始版本（中文翻译） |
+| `toolCallingRulesV1.md` | 工具调用规则 V1 版本（英文） |
+| `toolCallingRulesV1CN.md` | 工具调用规则 V1 版本（中文） |
+| `dsv4proMaxThinkingRules.md` | 深度推理规则（英文） |
+| `dsv4proMaxThinkingRules_cn.md` | 深度推理规则（中文） |
+| `README.md` | 项目说明文档（英文） |
+| `README_cn.md` | 项目说明文档（中文） |
+| `LICENSE` | CC BY-SA 4.0 许可证文件 |
+
+---
+
+## 工具调用规则 V1 优化理由
+
+V1 版本的工具调用规则在 V0 的基础上进行了系统性优化，具体如下：
 
 ### 1. 新增"调用前准备"类别
 
@@ -86,13 +100,12 @@ V1 在关键规则处增加了代码示例和对比表格，使规则更直观�
 
 ## LICENSE
 
-本项目基于 [GNU Affero General Public License v3.0 (AGPL-3.0)](https://www.gnu.org/licenses/agpl-3.0.html) 许可证发布。
+本项目基于 [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) 许可证发布。
 
-AGPL-3.0 是 GPL-3.0 的补充版本，其核心要求包括：
+CC BY-SA 4.0 是一种适用于创作性作品和文档的 Copyleft 许可证，其核心要求包括：
 
-- **自由使用和分发**：任何人都可以自由使用、修改和分发本项目的代码。
-- **Copyleft**：任何基于本项目的衍生作品必须同样以 AGPL-3.0 许可证发布。
-- **网络交互条款**：如果用户通过网络与基于本项目修改的软件进行交互，修改后的源代码必须向该用户提供。这是 AGPL 与 GPL 的关键区别。
-- **源代码提供义务**：分发或网络提供基于本项目的软件时，必须同时提供完整的源代码。
+- **署名（BY）**：你必须给出适当的署名，提供指向本许可证的链接，同时标明是否对原始作品作了修改。
+- **相同方式共享（SA）**：如果你对本作品进行再混合、转换或基于本作品进行创作，你必须基于与原先相同的许可证分发你的贡献作品。
+- **自由共享和改编**：任何人都可以自由地复制、再分发、再混合、转换和基于本作品进行创作，甚至可以用于商业目的。
 
-详见 [LICENSE](./LICENSE) 文件或访问 [AGPL-3.0 官方页面](https://www.gnu.org/licenses/agpl-3.0.html)。
+详见 [LICENSE](./LICENSE) 文件或访问 [CC BY-SA 4.0 官方页面](https://creativecommons.org/licenses/by-sa/4.0/)。
