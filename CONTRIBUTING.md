@@ -30,14 +30,14 @@ Your contribution will be licensed under the [Creative Commons Attribution-NonCo
 
 ### 2. Grant of Commercial Use Rights to Project Maintainers
 
-In addition to the CC BY-NC-SA 4.0 license, by submitting a contribution you also grant the project maintainers a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, distribute, and commercially exploit your contribution. This additional grant applies solely to the project maintainers and does not extend to other users of the project, who remain bound by the NC restriction of CC BY-NC-SA 4.0.
+In addition to the CC BY-NC-SA 4.0 license, by submitting a contribution you also grant the project maintainers a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, distribute, commercially exploit, and sublicense your contribution. This additional grant applies to the project maintainers and their authorized sublicensees, and does not extend to other users of the project, who remain bound by the NC restriction of CC BY-NC-SA 4.0.
 
 ### Summary
 
 | Party | Rights |
 |-------|--------|
 | General public | Use, share, and adapt under CC BY-NC-SA 4.0 (non-commercial only) |
-| Project maintainers | All rights under CC BY-NC-SA 4.0 **plus** commercial use rights |
+| Project maintainers | All rights under CC BY-NC-SA 4.0 **plus** commercial use and sublicense rights |
 
 ## Questions
 
