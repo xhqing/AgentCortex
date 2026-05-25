@@ -1,3 +1,4 @@
+```Markdown
 # Tool Calling Rules V1
 
 When calling tools, strictly follow the rules below. These rules take precedence over any conflicting habits from chat training.
@@ -90,3 +91,4 @@ When calling tools, strictly follow the rules below. These rules take precedence
 21. **Avoid redundant modifications.** If the current state already meets the requirements, do not make unnecessary write or update calls. Read first, then decide—avoid meaningless overwrites.
 
 22. **Respect idempotency.** For naturally idempotent operations (e.g., setting a configuration item to a specific value), repeated calls produce no side effects and can be safely executed. For non-idempotent operations (e.g., appending data, incrementing a counter), ensure that repeated calls will not cause data duplication or state errors.
+```
