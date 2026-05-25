@@ -28,7 +28,7 @@ Rules that activate an agent's deepest reasoning potential. They require the age
 | `dsv4proMaxThinkingRules_cn.md` | Deep reasoning rules (Chinese) |
 | `README.md` | Project documentation (English) |
 | `README_cn.md` | Project documentation (Chinese) |
-| `LICENSE` | CC BY-SA 4.0 license file |
+| `LICENSE` | CC BY-NC-SA 4.0 license file |
 
 ---
 
@@ -100,12 +100,13 @@ V1 adds code examples and comparison tables at key rules, making the rules more 
 
 ## LICENSE
 
-This project is released under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license.
+This project is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 
-CC BY-SA 4.0 is a copyleft license suitable for creative works and documentation. Its core requirements include:
+CC BY-NC-SA 4.0 is a copyleft license suitable for creative works and documentation. Its core requirements include:
 
 - **Attribution (BY)**: You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+- **NonCommercial (NC)**: You may not use the material for commercial purposes.
 - **ShareAlike (SA)**: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-- **Free to share and adapt**: Anyone is free to copy, redistribute, remix, transform, and build upon the material for any purpose, even commercially.
+- **Free to share and adapt**: Anyone is free to copy, redistribute, remix, transform, and build upon the material for non-commercial purposes only.
 
-See the [LICENSE](./LICENSE) file or visit the [CC BY-SA 4.0 official page](https://creativecommons.org/licenses/by-sa/4.0/) for details.
+See the [LICENSE](./LICENSE) file or visit the [CC BY-NC-SA 4.0 official page](https://creativecommons.org/licenses/by-nc-sa/4.0/) for details.

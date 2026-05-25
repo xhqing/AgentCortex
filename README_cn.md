@@ -28,7 +28,7 @@
 | `dsv4proMaxThinkingRules_cn.md` | 深度推理规则（中文） |
 | `README.md` | 项目说明文档（英文） |
 | `README_cn.md` | 项目说明文档（中文） |
-| `LICENSE` | CC BY-SA 4.0 许可证文件 |
+| `LICENSE` | CC BY-NC-SA 4.0 许可证文件 |
 
 ---
 
@@ -100,12 +100,13 @@ V1 在关键规则处增加了代码示例和对比表格，使规则更直观�
 
 ## LICENSE
 
-本项目基于 [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) 许可证发布。
+本项目基于 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可证发布。
 
-CC BY-SA 4.0 是一种适用于创作性作品和文档的 Copyleft 许可证，其核心要求包括：
+CC BY-NC-SA 4.0 是一种适用于创作性作品和文档的 Copyleft 许可证，其核心要求包括：
 
 - **署名（BY）**：你必须给出适当的署名，提供指向本许可证的链接，同时标明是否对原始作品作了修改。
+- **非商业性使用（NC）**：你不得将本作品用于商业目的。
 - **相同方式共享（SA）**：如果你对本作品进行再混合、转换或基于本作品进行创作，你必须基于与原先相同的许可证分发你的贡献作品。
-- **自由共享和改编**：任何人都可以自由地复制、再分发、再混合、转换和基于本作品进行创作，甚至可以用于商业目的。
+- **自由共享和改编**：任何人都可以自由地复制、再分发、再混合、转换和基于本作品进行创作，但仅限于非商业目的。
 
-详见 [LICENSE](./LICENSE) 文件或访问 [CC BY-SA 4.0 官方页面](https://creativecommons.org/licenses/by-sa/4.0/)。
+详见 [LICENSE](./LICENSE) 文件或访问 [CC BY-NC-SA 4.0 官方页面](https://creativecommons.org/licenses/by-nc-sa/4.0/)。
