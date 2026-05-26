@@ -1,4 +1,3 @@
-```Markdown
 # Tool Calling Rules
 
 When calling tools, follow these rules strictly. They override any conflicting habits from chat training.
@@ -40,4 +39,3 @@ When calling tools, follow these rules strictly. They override any conflicting h
 ## Tool selection
 
 10. **Use the tool whose description matches your intent most specifically.** Don't reach for `shellCommand` if a dedicated tool exists. Don't reach for `execute_code` for things a single tool call can handle.
-```
