@@ -126,7 +126,7 @@
 | `glm51MaxThinkingRules_cn.md` | 锐利推理引擎——深度推理规则（中文） |
 | `README.md` | 项目说明文档（英文） |
 | `README_cn.md` | 项目说明文档（中文） |
-| `LICENSE` | CC BY-NC-SA 4.0 许可证文件 |
+| `LICENSE` | PolyForm Noncommercial License 1.0.0 |
 
 ---
 
@@ -198,13 +198,15 @@ V1 在关键规则处增加了代码示例和对比表格，使规则更直观�
 
 ## LICENSE
 
-本项目基于 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可证发布。
+本项目基于 [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0) 许可证发布。
 
-CC BY-NC-SA 4.0 是一种适用于创作性作品和文档的 Copyleft 许可证，其核心要求包括：
+PolyForm Noncommercial 是一种软件许可证，允许非商业性使用、修改和分发。其核心条款包括：
 
-- **署名（BY）**：你必须给出适当的署名，提供指向本许可证的链接，同时标明是否对原始作品作了修改。
-- **非商业性使用（NC）**：你不得将本作品用于商业目的。
-- **相同方式共享（SA）**：如果你对本作品进行再混合、转换或基于本作品进行创作，你必须基于与原先相同的许可证分发你的贡献作品。
-- **自由共享和改编**：任何人都可以自由地复制、再分发、再混合、转换和基于本作品进行创作，但仅限于非商业目的。
+- **非商业性使用**：你可以出于非商业目的使用、修改和分享本软件。
+- **个人用途**：研究、实验、测试、个人学习、私人娱乐、爱好项目、业余追求和宗教活动均为允许的用途。
+- **非商业性组织**：慈善组织、教育机构、公共研究组织、公共安全或卫生组织、环境保护组织和政府机构的使用均为允许的用途。
+- **修改与衍生作品**：你可以出于任何允许的目的对本软件进行修改和创建衍生作品。
+- **专利授权**：许可证包含专利授权，覆盖你使用本软件时会侵权的专利权利要求。
+- **禁止再许可**：你不得将你的许可再许可或转让给任何其他人。
 
-详见 [LICENSE](./LICENSE) 文件或访问 [CC BY-NC-SA 4.0 官方页面](https://creativecommons.org/licenses/by-nc-sa/4.0/)。
+详见 [LICENSE](./LICENSE) 文件或访问 [PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0) 页面。

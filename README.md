@@ -126,7 +126,7 @@ Three reasoning engines have been designed for different model characteristics:
 | `glm51MaxThinkingRules_cn.md` | Incisive-Reasoning Engine — deep reasoning rules (Chinese) |
 | `README.md` | Project documentation (English) |
 | `README_cn.md` | Project documentation (Chinese) |
-| `LICENSE` | CC BY-NC-SA 4.0 license file |
+| `LICENSE` | PolyForm Noncommercial License 1.0.0 |
 
 ---
 
@@ -198,13 +198,15 @@ V1 adds code examples and comparison tables at key rules, making the rules more 
 
 ## LICENSE
 
-This project is released under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+This project is released under the [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0).
 
-CC BY-NC-SA 4.0 is a copyleft license suitable for creative works and documentation. Its core requirements include:
+PolyForm Noncommercial is a software license that permits noncommercial use, modification, and distribution. Its core terms include:
 
-- **Attribution (BY)**: You must give appropriate credit, provide a link to the license, and indicate if changes were made.
-- **NonCommercial (NC)**: You may not use the material for commercial purposes.
-- **ShareAlike (SA)**: If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
-- **Free to share and adapt**: Anyone is free to copy, redistribute, remix, transform, and build upon the material for non-commercial purposes only.
+- **Noncommercial Use**: You may use, modify, and share this software for noncommercial purposes only.
+- **Personal Uses**: Research, experiment, testing, personal study, private entertainment, hobby projects, and amateur pursuits are all permitted.
+- **Noncommercial Organizations**: Use by charitable organizations, educational institutions, public research organizations, public safety or health organizations, environmental protection organizations, and government institutions is permitted.
+- **Changes and New Works**: You may make changes and create new works based on this software for any permitted purpose.
+- **Patent License**: The license includes a patent grant covering patent claims you would infringe by using the software.
+- **No Sublicensing**: You may not sublicense or transfer your license to anyone else.
 
-See the [LICENSE](./LICENSE) file or visit the [CC BY-NC-SA 4.0 official page](https://creativecommons.org/licenses/by-nc-sa/4.0/) for details.
+See the [LICENSE](./LICENSE) file or visit the [PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0) page for details.
