@@ -331,7 +331,7 @@ A说"我们两个都是无赖"，请问A和B分别是什么人？请给出完整
 reasoning-evaluation-experimental/
 ├── .trae/
 │   └── rules/
-│       └── reasoning-engine.md   # 推理引擎规则（从 Rules4Agents 复制）
+│       └── reasoning-engine.md   # 推理引擎规则（从 AgentCortex 复制）
 ├── answers/
 │   └── answers-labelE-v1.0.csv   # 生成的回答（带 label:"E"）
 ├── scripts/
@@ -343,7 +343,7 @@ reasoning-evaluation-experimental/
 
 **`.trae/rules/reasoning-engine.md`** **说明**：
 
-- 从 Rules4Agents 项目复制对应的引擎规则文件内容
+- 从 AgentCortex 项目复制对应的引擎规则文件内容
 - 评测 Infinite-Reasoning 时，复制 `dsv4proMaxThinkingRules.md` 的内容
 - 评测 Rapid-Reasoning 时，复制 `dsv4flashMaxThinkingRules.md` 的内容
 - 评测 Incisive-Reasoning 时，复制 `glm51MaxThinkingRules.md` 的内容

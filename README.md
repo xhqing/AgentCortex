@@ -1,4 +1,4 @@
-# Rules4Agents
+# AgentCortex
 
 ## Project Introduction
 

@@ -1,4 +1,4 @@
-# Rules4Agents
+# AgentCortex
 
 ## 项目介绍
 

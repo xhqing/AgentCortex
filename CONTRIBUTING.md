@@ -1,6 +1,6 @@
-# Contributing to Rules4Agents
+# Contributing to AgentCortex
 
-Thank you for your interest in contributing to Rules4Agents! Before submitting your contribution, please read this document carefully.
+Thank you for your interest in contributing to AgentCortex! Before submitting your contribution, please read this document carefully.
 
 ## How to Contribute
 

@@ -35,7 +35,7 @@ URL for them above, as well as copies of any plain-text lines
 beginning with `Required Notice:` that the licensor provided
 with the software.  For example:
 
-> Required Notice: Copyright Contributors (http://github.com/xhqing/Rules4Agents)
+> Required Notice: Copyright Contributors (http://github.com/xhqing/AgentCortex)
 
 ## Changes and New Works License
 

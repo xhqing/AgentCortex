@@ -1,6 +1,6 @@
-# 为 Rules4Agents 做贡献
+# 为 AgentCortex 做贡献
 
-感谢您有兴趣为 Rules4Agents 做贡献！在提交贡献之前，请仔细阅读本文档。
+感谢您有兴趣为 AgentCortex 做贡献！在提交贡献之前，请仔细阅读本文档。
 
 ## 如何贡献
 
