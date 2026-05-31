@@ -10,6 +10,8 @@
 [![GitHub Issues](https://img.shields.io/github/issues/xhqing/AgentCortex)](https://github.com/xhqing/AgentCortex/issues)
 [![GitHub Forks](https://img.shields.io/github/forks/xhqing/AgentCortex?style=social)](https://github.com/xhqing/AgentCortex/fork)
 
+**[中文文档](./README_cn.md)**
+
 </div>
 
 ---
