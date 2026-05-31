@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=AgentCortex%20logo%2C%20neural%20brain%20icon%2C%20blue%20cyan%20glowing%20nodes%2C%20dark%20background%2C%20minimalist&image_size=square_hd" alt="AgentCortex Logo" width="200" />
+<img src="./logo.svg" alt="AgentCortex Logo" width="200" />
 
 # AgentCortex
 
