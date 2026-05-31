@@ -1,4 +1,18 @@
+<div align="center">
+
+<img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=AgentCortex%20logo%2C%20neural%20brain%20icon%2C%20blue%20cyan%20glowing%20nodes%2C%20dark%20background%2C%20minimalist&image_size=square_hd" alt="AgentCortex Logo" width="200" />
+
 # AgentCortex
+
+[![License](https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue)](https://polyformproject.org/licenses/noncommercial/1.0.0)
+[![Version](https://img.shields.io/badge/Version-v1.0.0-brightgreen)](./VERSION)
+[![GitHub Stars](https://img.shields.io/github/stars/xhqing/AgentCortex?style=social)](https://github.com/xhqing/AgentCortex/stargazers)
+[![GitHub Issues](https://img.shields.io/github/issues/xhqing/AgentCortex)](https://github.com/xhqing/AgentCortex/issues)
+[![GitHub Forks](https://img.shields.io/github/forks/xhqing/AgentCortex?style=social)](https://github.com/xhqing/AgentCortex/fork)
+
+</div>
+
+---
 
 ## 项目介绍
 
