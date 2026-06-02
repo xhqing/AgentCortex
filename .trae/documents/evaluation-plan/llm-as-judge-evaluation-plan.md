@@ -286,7 +286,10 @@ reasoning-evaluation-questions/
 │   └── build_questions.py  # 将分散的 .md 题目合并为 questions.csv
 ├── output/
 │   └── questions.csv       # 构建产物（由脚本生成）
-└── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── README.md
+└── README_cn.md
 ```
 
 **题目 Markdown 格式**（每题一个 .md 文件）：
@@ -342,7 +345,10 @@ reasoning-evaluation-experimental/
 │   └── fetch_questions.py        # 从题目仓库 Release 下载 questions.csv
 ├── input/
 │   └── questions.csv             # 下载的题目（由脚本获取）
-└── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── README.md
+└── README_cn.md
 ```
 
 **`.trae/rules/reasoning-engine.md`** **说明**：
@@ -392,7 +398,10 @@ reasoning-evaluation-control/
 │   └── fetch_questions.py        # 从题目仓库 Release 下载 questions.csv
 ├── input/
 │   └── questions.csv             # 下载的题目（由脚本获取）
-└── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── README.md
+└── README_cn.md
 ```
 
 **关键区别**：无 `.trae/rules/` 目录，不包含任何推理引擎规则。
@@ -449,7 +458,10 @@ reasoning-evaluation-judge/
 │   └── evaluations-v1.0.csv      # ⑤ 关联label后的最终结果
 ├── reports/
 │   └── report.md                 # ⑥ 最终统计报告
-└── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── README.md
+└── README_cn.md
 ```
 
 **`.trae/rules/judge-rules.md`** **内容**：
