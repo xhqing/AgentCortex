@@ -2,15 +2,28 @@
 
 ## 目标
 
-使用 TRAE CN 内置模型，通过 LLM-as-Judge 方法验证推理引擎规则是否提升了模型回答质量。系统基于 4 个独立 Git 仓库实现，通过 GitHub Release 进行版本化数据交换，天然实现上下文隔离和盲评。所有数据文件统一使用 CSV 格式。
+使用 TRAE IDE CN 内置模型，通过 LLM-as-Judge 方法验证推理引擎规则是否提升了模型回答质量。系统基于 4 个独立 Git 仓库实现，通过 GitHub Release 进行版本化数据交换，天然实现上下文隔离和盲评。所有数据文件统一使用 CSV 格式。
 
 ## 核心设计思路
 
-**四仓库分离架构**：每个仓库是独立的 TRAE 项目，在不同对话/工作区中打开，天然隔离上下文。
+**四仓库分离架构**：每个仓库是独立的 TRAE IDE CN 项目，在不同工作区中打开，天然隔离上下文。
 
 ```
-                           GitHub Release
-                           questions-v{ver}.csv
+┌───────────────────────┐
+│  仓库1: Questions     │
+│  (搜集题目)           │
+│                       │
+│  questions/           │
+│  ├─ logic/            │
+│  ├─ counterintuitive/ │
+│  ├─ premise-audit/    │
+│  ├─ quantitative/     │
+│  └─ open-depth/       │
+└───────────┬───────────┘
+            │
+            ↓
+                       GitHub Release
+                       questions-v{ver}.csv
                                   │
                     ┌─────────────┼─────────────┐
                     ↓             ↓             ↓
@@ -22,9 +35,10 @@
 │  └─ reasoning-engine  │  │                       │
 └───────────┬───────────┘  └───────────┬───────────┘
             │                          │
-            │ GitHub Release           │ GitHub Release
-            │ answers-labelE           │ answers-labelC
-            │ -v{ver}.csv              │ -v{ver}.csv
+            ↓                          ↓
+   GitHub Release              GitHub Release
+   answers-labelE              answers-labelC
+   -v{ver}.csv                 -v{ver}.csv
             │                          │
             │     ⚠ 版本号必须相同      │
             │                          │
@@ -40,18 +54,6 @@
           │  ⑤ 关联评审结果与label          │
           │  ⑥ 统计评估                    │
           └────────────────────────────────┘
-
-┌───────────────────────┐
-│  仓库1: Questions     │
-│  (搜集题目)           │
-│                       │
-│  questions/           │
-│  ├─ logic/            │
-│  ├─ counterintuitive/ │
-│  ├─ premise-audit/    │
-│  ├─ quantitative/     │
-│  └─ open-depth/       │
-└───────────────────────┘
 ```
 
 ## 表结构设计
@@ -147,7 +149,7 @@
 
 | 列名            | 类型  | 说明           | 示例             |
 | ------------- | --- | ------------ | -------------- |
-| pair\_id      | str | 题对ID         | P01            |
+| pair\_id      | str | 答案对ID        | P01            |
 | logic\_a      | int | 逻辑严谨性-a得分    | 8              |
 | logic\_b      | int | 逻辑严谨性-b得分    | 6              |
 | depth\_a      | int | 深度与洞察力-a得分   | 7              |
@@ -166,7 +168,7 @@
 | 列名                | 类型  | 说明           | 示例             |
 | ----------------- | --- | ------------ | -------------- |
 | qid               | str | 题目ID         | Q01            |
-| pair\_id          | str | 题对ID         | P01            |
+| pair\_id          | str | 答案对ID        | P01            |
 | blind\_id\_a      | str | a的blind\_id  | B01            |
 | blind\_id\_b      | str | b的blind\_id  | B02            |
 | label\_a          | str | a的label      | E              |
@@ -247,7 +249,7 @@ answers-labelE-v1.0.csv            answers-labelC-v1.0.csv
 
 1. **blind\_id 是每条回答的唯一主键**，不重复，用于关联 label
 2. **label 只有两个值**：`"E"`（实验组）和 `"C"`（对照组）
-3. **pair\_id 是题对ID**，同一题的 E 和 C 共享一个 pair\_id
+3. **pair\_id 是答案对ID**，同一题（qid）的 E 和 C 两个回答共享一个 pair\_id
 4. **评审 LLM 只看到 blind\_for\_judge.csv**，无 label、无 qid、无 blind\_id
 5. **版本号必须匹配**：实验组和对照组的版本号相同才能对比
 6. **所有数据文件使用 CSV 格式**，简洁透明
@@ -307,13 +309,15 @@ A说"我们两个都是无赖"，请问A和B分别是什么人？请给出完整
 
 **Release 规范**：
 
-- Tag 格式：`questions-v{major}.{minor}`，如 `questions-v1.0`
-- Release 标题：`Questions v1.0 - 12道评测题`
-- Release Asset：`questions.csv`
+* Tag 格式：`questions-v{major}.{minor}`，如 `questions-v1.0`
+
+* Release 标题：`Questions v1.0 - 12道评测题`
+
+* Release Asset：`questions.csv`
 
 **操作流程**：
 
-1. 在 TRAE 中打开此仓库项目
+1. 在 TRAE IDE CN 中打开此仓库项目
 2. 创建/编辑 `questions/` 目录下的 .md 题目文件
 3. 运行 `python scripts/build_questions.py` 生成 `output/questions.csv`
 4. 提交代码并打 Tag
@@ -343,24 +347,31 @@ reasoning-evaluation-experimental/
 
 **`.trae/rules/reasoning-engine.md`** **说明**：
 
-- 从 AgentCortex 项目复制对应的引擎规则文件内容
-- 评测 Infinite-Reasoning 时，复制 `dsv4proMaxThinkingRules.md` 的内容
-- 评测 Rapid-Reasoning 时，复制 `dsv4flashMaxThinkingRules.md` 的内容
-- 评测 Incisive-Reasoning 时，复制 `glm51MaxThinkingRules.md` 的内容
-- 此文件作为 TRAE workspace rules 自动加载，模型在做题时自动遵循深度推理规则
+* 从 AgentCortex 项目复制对应的引擎规则文件内容
+
+* 评测 Infinite-Reasoning 时，复制 `dsv4proMaxThinkingRules.md` 的内容
+
+* 评测 Rapid-Reasoning 时，复制 `dsv4flashMaxThinkingRules.md` 的内容
+
+* 评测 Incisive-Reasoning 时，复制 `glm51MaxThinkingRules.md` 的内容
+
+* 此文件作为 TRAE IDE CN workspace rules 自动加载，模型在做题时自动遵循深度推理规则
 
 **Release 规范**：
 
-- Tag 格式：`experimental-v{major}.{minor}`，如 `experimental-v1.0`
-- Release 标题：`Experimental v1.0 - Infinite-Reasoning Engine Answers`
-- Release Asset：`answers-labelE-v1.0.csv`
-- Release Body 中注明使用的题目版本和引擎类型
+* Tag 格式：`experimental-v{major}.{minor}`，如 `experimental-v1.0`
+
+* Release 标题：`Experimental v1.0 - Infinite-Reasoning Engine Answers`
+
+* Release Asset：`answers-labelE-v1.0.csv`
+
+* Release Body 中注明使用的题目版本和引擎类型
 
 **操作流程**：
 
-1. 在 TRAE 中打开此仓库项目（引擎规则自动加载）
+1. 在 TRAE IDE CN 中打开此仓库项目（引擎规则自动加载）
 2. 运行 `python scripts/fetch_questions.py --version questions-v1.0` 下载题目
-3. 在 TRAE 对话中要求模型逐题作答（引擎规则已通过 `.trae/rules/` 自动生效）
+3. 在 TRAE IDE CN 对话中要求模型逐题作答（引擎规则已通过 `.trae/rules/` 自动生效）
 4. 将模型生成的回答整理写入 `answers/answers-labelE-v1.0.csv`
 5. 提交代码并打 Tag
 6. 在 GitHub 上创建 Release，上传 `answers-labelE-v1.0.csv`
@@ -388,17 +399,19 @@ reasoning-evaluation-control/
 
 **Release 规范**：
 
-- Tag 格式：`control-v{major}.{minor}`，如 `control-v1.0`
-- Release 标题：`Control v1.0 - Standard Assistant Answers`
-- Release Asset：`answers-labelC-v1.0.csv`
+* Tag 格式：`control-v{major}.{minor}`，如 `control-v1.0`
+
+* Release 标题：`Control v1.0 - Standard Assistant Answers`
+
+* Release Asset：`answers-labelC-v1.0.csv`
 
 **⚠ 版本号匹配要求**：实验组和对照组的版本号必须相同（如 `v1.0`），才能进行对比。评审仓库在获取数据时会校验版本号一致性。
 
 **操作流程**：
 
-1. 在 TRAE 中打开此仓库项目（无引擎规则加载）
+1. 在 TRAE IDE CN 中打开此仓库项目（无引擎规则加载）
 2. 运行 `python scripts/fetch_questions.py --version questions-v1.0` 下载题目
-3. 在 TRAE 对话中要求模型逐题作答（标准助手行为）
+3. 在 TRAE IDE CN 对话中要求模型逐题作答（标准助手行为）
 4. 将模型生成的回答整理写入 `answers/answers-labelC-v1.0.csv`
 5. 提交代码并打 Tag
 6. 在 GitHub 上创建 Release，上传 `answers-labelC-v1.0.csv`
@@ -482,18 +495,20 @@ reasoning-evaluation-judge/
 
 **Release 规范**：
 
-- Tag 格式：`evaluation-v{major}.{minor}`，如 `evaluation-v1.0`
-- Release 标题：`Evaluation v1.0 - Infinite-Reasoning vs Control`
-- Release Assets：`evaluations-v1.0.csv` + `report.md`
+* Tag 格式：`evaluation-v{major}.{minor}`，如 `evaluation-v1.0`
+
+* Release 标题：`Evaluation v1.0 - Infinite-Reasoning vs Control`
+
+* Release Assets：`evaluations-v1.0.csv` + `report.md`
 
 **操作流程**：
 
-1. 在 TRAE 中打开此仓库项目
+1. 在 TRAE IDE CN 中打开此仓库项目
 2. 运行 `python scripts/fetch_data.py`（下载三个仓库的数据，校验版本号一致）
 3. 运行 `python scripts/merge_and_shuffle.py`（① 合并+随机打乱）
 4. 运行 `python scripts/assign_blind_id.py`（② 为每条记录分配唯一blind\_id）
 5. 运行 `python scripts/prepare_blind.py`（③ 生成盲评版和保留版）
-6. 在 TRAE 对话中要求模型对 `blind_for_judge.csv` 逐题盲评（④ 使用与做题不同的 LLM）
+6. 在 TRAE IDE CN 对话中要求模型对 `blind_for_judge.csv` 逐题盲评（④ 使用与做题不同的 LLM）
 7. 将评审结果整理写入 `evaluations/raw_evaluations.csv`
 8. 运行 `python scripts/associate_results.py`（⑤ 关联评审结果与label）
 9. 运行 `python scripts/analyze.py`（⑥ 统计评估，生成报告）
@@ -558,10 +573,13 @@ python scripts/fetch_questions.py \
 
 **关键设计原则**：
 
-- 题目必须足够难，简单题无法体现引擎差异
-- 前提审计题故意包含错误前提，测试引擎是否能让模型识别
-- 反直觉题测试模型是否会走"捷径"
-- 每道题有 `reference_points` 辅助评审，但无标准答案
+* 题目必须足够难，简单题无法体现引擎差异
+
+* 前提审计题故意包含错误前提，测试引擎是否能让模型识别
+
+* 反直觉题测试模型是否会走"捷径"
+
+* 每道题有 `reference_points` 辅助评审，但无标准答案
 
 ***
 
@@ -624,7 +642,7 @@ python scripts/fetch_questions.py \
 ### Phase 1：准备题目
 
 ```
-1. 在 TRAE 中打开 reasoning-evaluation-questions 仓库
+1. 在 TRAE IDE CN 中打开 reasoning-evaluation-questions 仓库
 2. 创建 questions/ 目录下的 .md 题目文件
 3. 运行 python scripts/build_questions.py
 4. git commit & git tag questions-v1.0
@@ -635,9 +653,9 @@ python scripts/fetch_questions.py \
 ### Phase 2：生成实验组回答
 
 ```
-1. 在 TRAE 中打开 reasoning-evaluation-experimental 仓库（引擎规则自动加载）
+1. 在 TRAE IDE CN 中打开 reasoning-evaluation-experimental 仓库（引擎规则自动加载）
 2. 运行 python scripts/fetch_questions.py --version questions-v1.0
-3. 在 TRAE 对话中要求模型逐题作答
+3. 在 TRAE IDE CN 对话中要求模型逐题作答
 4. 将回答整理写入 answers/answers-labelE-v1.0.csv
 5. git commit & git tag experimental-v1.0
 6. git push --tags
@@ -647,9 +665,9 @@ python scripts/fetch_questions.py \
 ### Phase 3：生成对照组回答（与 Phase 2 并行）
 
 ```
-1. 在 TRAE 中打开 reasoning-evaluation-control 仓库（无引擎规则）
+1. 在 TRAE IDE CN 中打开 reasoning-evaluation-control 仓库（无引擎规则）
 2. 运行 python scripts/fetch_questions.py --version questions-v1.0
-3. 在 TRAE 对话中要求模型逐题作答
+3. 在 TRAE IDE CN 对话中要求模型逐题作答
 4. 将回答整理写入 answers/answers-labelC-v1.0.csv
 5. git commit & git tag control-v1.0
 6. git push --tags
@@ -659,12 +677,12 @@ python scripts/fetch_questions.py \
 ### Phase 4：盲评与统计
 
 ```
-1. 在 TRAE 中打开 reasoning-evaluation-judge 仓库
+1. 在 TRAE IDE CN 中打开 reasoning-evaluation-judge 仓库
 2. 运行 python scripts/fetch_data.py（下载三个仓库的数据，校验版本号一致）
 3. 运行 python scripts/merge_and_shuffle.py（① 合并+随机打乱）
 4. 运行 python scripts/assign_blind_id.py（② 为每条记录分配唯一blind_id）
 5. 运行 python scripts/prepare_blind.py（③ 生成盲评版和保留版）
-6. 在 TRAE 对话中要求模型对 blind_for_judge.csv 逐题盲评（④ 使用与做题不同的 LLM）
+6. 在 TRAE IDE CN 对话中要求模型对 blind_for_judge.csv 逐题盲评（④ 使用与做题不同的 LLM）
 7. 将评审结果整理写入 evaluations/raw_evaluations.csv
 8. 运行 python scripts/associate_results.py（⑤ 关联评审结果与label）
 9. 运行 python scripts/analyze.py（⑥ 统计评估，生成报告）
@@ -679,7 +697,7 @@ python scripts/fetch_questions.py \
 
 | 偏差类型         | 防范措施                                                             |
 | ------------ | ---------------------------------------------------------------- |
-| 上下文污染        | 实验组/对照组/评审组在不同仓库、不同 TRAE 项目中执行                                   |
+| 上下文污染        | 实验组/对照组/评审组在不同仓库、不同 TRAE IDE CN 项目中执行                                   |
 | 引擎规则泄露       | 对照组仓库无 `.trae/rules/` 目录，模型不知道引擎规则的存在                            |
 | 位置偏差         | `merge_and_shuffle.py` 随机打乱 E/C 的 a/b 位置                         |
 | label 泄露     | `prepare_blind.py` 生成无 label 的盲评版，评审 LLM 只看到 answer\_a/answer\_b |
@@ -693,10 +711,15 @@ python scripts/fetch_questions.py \
 
 ## 后续扩展
 
-- 增加题目数量到 30 题
-- 支持评测三个引擎（Infinite / Rapid / Incisive），通过切换实验组仓库的 `.trae/rules/reasoning-engine.md` 内容实现
-- 增加更多评审维度
-- 多次评审取平均
-- 可视化图表输出
-- 自动化 CI/CD：GitHub Actions 自动运行 fetch 和 merge 脚本
+* 增加题目数量到 30 题
+
+* 支持评测三个引擎（Infinite / Rapid / Incisive），通过切换实验组仓库的 `.trae/rules/reasoning-engine.md` 内容实现
+
+* 增加更多评审维度
+
+* 多次评审取平均
+
+* 可视化图表输出
+
+* 自动化 CI/CD：GitHub Actions 自动运行 fetch 和 merge 脚本
 
