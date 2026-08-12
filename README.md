@@ -1,16 +1,15 @@
 <div align="center">
 
-<img src="./logo.svg" alt="AgentCortex Logo" width="200" />
+<img src="./assets/logo.svg" alt="AgentCortex Logo" width="640" />
 
 # AgentCortex
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/Version-v1.0.0-brightgreen)](./VERSION)
-[![GitHub Stars](https://img.shields.io/github/stars/xhqing/AgentCortex?style=social)](https://github.com/xhqing/AgentCortex/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/xhqing/AgentCortex)](https://github.com/xhqing/AgentCortex/issues)
 [![GitHub Forks](https://img.shields.io/github/forks/xhqing/AgentCortex?style=social)](https://github.com/xhqing/AgentCortex/fork)
 
-**[中文文档](./README_cn.md)**
+[简体中文](./README_cn.md)
 
 </div>
 
@@ -134,9 +133,9 @@ Three reasoning engines have been designed for different model characteristics:
 
 ---
 
-## LICENSE
+## License & Attribution
 
-This project is released under the [MIT License](https://opensource.org/licenses/MIT).
+This project is released under the [MIT License](./LICENSE.md).
 
 MIT is a permissive software license that allows free use, modification, distribution, and commercial use. Its core terms include:
 
@@ -146,3 +145,9 @@ MIT is a permissive software license that allows free use, modification, distrib
 - **No Warranty**: The software is provided "as is", without warranty of any kind.
 
 See the [LICENSE.md](./LICENSE.md) file for details.
+
+**Copyright (c) 2026 All Contributors**
+
+**Attribution**: If you reference, build upon, or redistribute this project, please retain the above copyright notice and indicate the source. This project is a collective effort — individual contributors are acknowledged collectively as "All Contributors" rather than listed by name.
+
+**Project URL**: <https://github.com/xhqing/AgentCortex>

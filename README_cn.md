@@ -1,16 +1,15 @@
 <div align="center">
 
-<img src="./logo.svg" alt="AgentCortex Logo" width="200" />
+<img src="./assets/logo.svg" alt="AgentCortex Logo" width="640" />
 
 # AgentCortex
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/Version-v1.0.0-brightgreen)](./VERSION)
-[![GitHub Stars](https://img.shields.io/github/stars/xhqing/AgentCortex?style=social)](https://github.com/xhqing/AgentCortex/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/xhqing/AgentCortex)](https://github.com/xhqing/AgentCortex/issues)
 [![GitHub Forks](https://img.shields.io/github/forks/xhqing/AgentCortex?style=social)](https://github.com/xhqing/AgentCortex/fork)
 
-**[English Documentation](./README.md)**
+[English](./README.md)
 
 </div>
 
@@ -134,9 +133,9 @@
 
 ---
 
-## LICENSE
+## 版权与署名
 
-本项目基于 [MIT License](https://opensource.org/licenses/MIT) 许可证发布。
+本项目基于 [MIT License](./LICENSE.md) 许可证发布。
 
 MIT 是一种宽松软件许可证，允许自由使用、修改、分发和商业使用。其核心条款包括：
 
@@ -146,3 +145,9 @@ MIT 是一种宽松软件许可证，允许自由使用、修改、分发和商�
 - **不提供担保**：本软件按「现状」提供，不附带任何形式的担保。
 
 详见 [LICENSE.md](./LICENSE.md) 文件。
+
+**版权所有 (c) 2026 All Contributors**
+
+**署名方式**：若你引用、在本项目基础上改进或重新分发本项目，请保留上述版权声明并注明来源。本项目是集体成果——个人贡献者统一以「All Contributors」致谢，不单独列出姓名。
+
+**项目地址**：<https://github.com/xhqing/AgentCortex>
