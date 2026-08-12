@@ -4,7 +4,7 @@
 
 # AgentCortex
 
-[![License](https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue)](https://polyformproject.org/licenses/noncommercial/1.0.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/Version-v1.0.0-brightgreen)](./VERSION)
 [![GitHub Stars](https://img.shields.io/github/stars/xhqing/AgentCortex?style=social)](https://github.com/xhqing/AgentCortex/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/xhqing/AgentCortex)](https://github.com/xhqing/AgentCortex/issues)
@@ -130,21 +130,19 @@ Three reasoning engines have been designed for different model characteristics:
 | `glm51MaxThinkingRules_cn.md` | Incisive-Reasoning Engine — deep reasoning rules (Chinese) |
 | `README.md` | Project documentation (English) |
 | `README_cn.md` | Project documentation (Chinese) |
-| `LICENSE` | PolyForm Noncommercial License 1.0.0 |
+| `LICENSE.md` | MIT License |
 
 ---
 
 ## LICENSE
 
-This project is released under the [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0).
+This project is released under the [MIT License](https://opensource.org/licenses/MIT).
 
-PolyForm Noncommercial is a software license that permits noncommercial use, modification, and distribution. Its core terms include:
+MIT is a permissive software license that allows free use, modification, distribution, and commercial use. Its core terms include:
 
-- **Noncommercial Use**: You may use, modify, and share this software for noncommercial purposes only.
-- **Personal Uses**: Research, experiment, testing, personal study, private entertainment, hobby projects, and amateur pursuits are all permitted.
-- **Noncommercial Organizations**: Use by charitable organizations, educational institutions, public research organizations, public safety or health organizations, environmental protection organizations, and government institutions is permitted.
-- **Changes and New Works**: You may make changes and create new works based on this software for any permitted purpose.
-- **Patent License**: The license includes a patent grant covering patent claims you would infringe by using the software.
-- **No Sublicensing**: You may not sublicense or transfer your license to anyone else.
+- **Free Use**: You may use, copy, modify, merge, publish, distribute, sublicense, and sell copies of this software.
+- **Commercial Use**: Commercial use is permitted without restriction.
+- **Attribution**: The copyright notice and this permission notice must be included in all copies or substantial portions of the software.
+- **No Warranty**: The software is provided "as is", without warranty of any kind.
 
-See the [LICENSE](./LICENSE) file or visit the [PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0) page for details.
+See the [LICENSE.md](./LICENSE.md) file for details.

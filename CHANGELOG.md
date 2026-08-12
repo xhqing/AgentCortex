@@ -4,6 +4,11 @@ All notable changes to the AgentCortex project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### Changed
+- Changed project license from PolyForm Noncommercial License 1.0.0 to MIT License: open up the project for commercial use and redistribution, making it easier to promote and adopt. Updated LICENSE.md to the MIT License text; synced the license badge, file table, and LICENSE section in README.md and README_cn.md; simplified the contribution licensing section in CONTRIBUTING.md and CONTRIBUTING_cn.md (the noncommercial restrictions, patent clause, and extra commercial grant to maintainers are no longer needed under MIT)
+
 ## [1.0.0] - 2026-05-27
 
 ### Added
@@ -15,6 +20,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 - CONTRIBUTING.md and CONTRIBUTING_cn.md guidelines
 - README.md and README_cn.md project documentation
 - LICENSE.md (PolyForm Noncommercial License 1.0.0)
+- .gitignore (exclude monetization-plan.md, an internal business plan that must not be committed to the public repository; also exclude tmp/ and .DS_Store)
 
 ### Changed
 - Expanded project scope from tool calling rules to a comprehensive agent rules collection

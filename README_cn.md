@@ -4,7 +4,7 @@
 
 # AgentCortex
 
-[![License](https://img.shields.io/badge/License-PolyForm_NC_1.0.0-blue)](https://polyformproject.org/licenses/noncommercial/1.0.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/Version-v1.0.0-brightgreen)](./VERSION)
 [![GitHub Stars](https://img.shields.io/github/stars/xhqing/AgentCortex?style=social)](https://github.com/xhqing/AgentCortex/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/xhqing/AgentCortex)](https://github.com/xhqing/AgentCortex/issues)
@@ -130,21 +130,19 @@
 | `glm51MaxThinkingRules_cn.md` | 锐利推理引擎——深度推理规则（中文） |
 | `README.md` | 项目说明文档（英文） |
 | `README_cn.md` | 项目说明文档（中文） |
-| `LICENSE` | PolyForm Noncommercial License 1.0.0 |
+| `LICENSE.md` | MIT License |
 
 ---
 
 ## LICENSE
 
-本项目基于 [PolyForm Noncommercial License 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0) 许可证发布。
+本项目基于 [MIT License](https://opensource.org/licenses/MIT) 许可证发布。
 
-PolyForm Noncommercial 是一种软件许可证，允许非商业性使用、修改和分发。其核心条款包括：
+MIT 是一种宽松软件许可证，允许自由使用、修改、分发和商业使用。其核心条款包括：
 
-- **非商业性使用**：你可以出于非商业目的使用、修改和分享本软件。
-- **个人用途**：研究、实验、测试、个人学习、私人娱乐、爱好项目、业余追求和宗教活动均为允许的用途。
-- **非商业性组织**：慈善组织、教育机构、公共研究组织、公共安全或卫生组织、环境保护组织和政府机构的使用均为允许的用途。
-- **修改与衍生作品**：你可以出于任何允许的目的对本软件进行修改和创建衍生作品。
-- **专利授权**：许可证包含专利授权，覆盖你使用本软件时会侵权的专利权利要求。
-- **禁止再许可**：你不得将你的许可再许可或转让给任何其他人。
+- **自由使用**：你可以使用、复制、修改、合并、发布、分发、再许可和出售本软件。
+- **商业使用**：允许商业使用，无任何限制。
+- **保留版权声明**：所有副本或实质性部分必须包含上述版权声明和本许可声明。
+- **不提供担保**：本软件按「现状」提供，不附带任何形式的担保。
 
-详见 [LICENSE](./LICENSE) 文件或访问 [PolyForm Noncommercial 1.0.0](https://polyformproject.org/licenses/noncommercial/1.0.0) 页面。
+详见 [LICENSE.md](./LICENSE.md) 文件。
