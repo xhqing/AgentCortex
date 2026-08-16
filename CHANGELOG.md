@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## [Unreleased]
 
+### 新增（README 访问量徽章——舰队集中式访问统计）
+
+- **为什么改**：全舰队上线集中式「真去重」访问统计（图片徽章方案无法去重，走官方 Traffic API 路线）：统计集中部署在 xhqing 仓库（`scripts/update_traffic.py` + 每日 GitHub Action），各 fleet 仓库只需在 README 挂徽章、零运行负担。
+- **改了什么**：README（EN/CN）徽章区新增 visitors 徽章（shields.io endpoint 指向 `xhqing/xhqing` 仓库 `traffic/badges/<repo>.json`，由每日采集的官方 Traffic API 数据更新）。徽章数字含义：按日去重访客的累计（GitHub 只提供每日 uniques，跨天不去重），自 2026-08-16 起累计。
+
 ### Changed
 - Changed project license from PolyForm Noncommercial License 1.0.0 to MIT License: open up the project for commercial use and redistribution, making it easier to promote and adopt. Updated LICENSE.md to the MIT License text; synced the license badge, file table, and LICENSE section in README.md and README_cn.md; simplified the contribution licensing section in CONTRIBUTING.md and CONTRIBUTING_cn.md (the noncommercial restrictions, patent clause, and extra commercial grant to maintainers are no longer needed under MIT)
 - Enhanced the LLM-as-Judge evaluation plan (`.trae/documents/evaluation-plan/llm-as-judge-evaluation-plan.md`) to make the evaluation of the Rapid-Reasoning Engine statistically sound and budgeted: added an evaluation condition baseline enforcing the same "max reasoning effort" (reasoning_effort=max, temperature=1.0, top_p=0.95) for both experimental and control groups so the engine rule is the only variable (motivated by DeepSeek-V4-Flash-0731's built-in max-level deep reasoning, which would otherwise confound the attribution); added sample-size planning (12/30/60 tiers with Cohen's dz power analysis and Wilcoxon/t-test decision criteria); added length-bias control (answer_tokens covariate, explicit judge rule, and matched-length robustness check) since the engine's exhaustive-extraction rules systematically lengthen answers; added a budget estimation section based on official DeepSeek-V4-Flash-0731 API pricing (input $0.14/M cache-miss, output $0.28/M), estimating ~$0.03 for a minimal 12-question run, ~$0.25 for the recommended 30-question ×3-averaged run, and up to ~$0.95 for a fully robust 60-question ×3×3 run with one retest round — concluding token cost is not the bottleneck, the recommended tier can detect a 1-point/10 improvement
