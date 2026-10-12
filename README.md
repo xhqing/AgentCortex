@@ -130,6 +130,7 @@ Three reasoning engines have been designed for different model characteristics:
 | `README.md` | Project documentation (English) |
 | `README_cn.md` | Project documentation (Chinese) |
 | `LICENSE.md` | MIT License |
+| `docs/` | Evaluation system plans — LLM-as-Judge evaluation design and the four component-repo plans (questions / experimental / control / judge) |
 
 ---
 

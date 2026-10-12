@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## [Unreleased]
 
+### 移除（智能体专属文件清理：CLAUDE.md 与 AGENTS.md 软链）
+
+- **为什么改**：全局规则 2026-10-12 修订（用户立，取代原「子项目 `.claude/` 超集」规则）——`CLAUDE.md`、`AGENTS.md`、`.claude/`、项目级 `.pi/` 等「会话启动时按工作目录加载、表征智能体身份」的智能体专属文件只允许 Agent 项目拥有，非 Agent 项目（含子项目）一律不得存在，存量发现即清理。
+- **改了什么**：删除项目根 `CLAUDE.md` 与 `AGENTS.md` 软链（原内容＝AgentCortex 项目指南 + 上级 NeuralCoreAgent（Ada）规则全文随附）。指南中与 README 重复的部分不再保留；独有内容「评测文档入口」迁入 README 的 Project Files 表（新增 `docs/` 行，中英双语同步）；随附的 Ada 规则全文属 NeuralCoreAgent 项目文件，副本删除、不再随附。本仓自此不含任何智能体专属文件。
+
 ### 新增（AGENTS.md 软链接指向项目根 CLAUDE.md）
 
 - **为什么改**：CLAUDE.md 已从 `.claude/` 移到项目根（对齐全局约定「角色化 CLAUDE.md 直接放项目根 + 项目根建 AGENTS.md 软链接指向它」），软链接让只认 `AGENTS.md` 的 agent 工具（如 ZCode）也能加载同一份项目指南，两文件内容天然同步、无需双份维护。

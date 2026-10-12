@@ -130,6 +130,7 @@
 | `README.md` | 项目说明文档（英文） |
 | `README_cn.md` | 项目说明文档（中文） |
 | `LICENSE.md` | MIT License |
+| `docs/` | 评测体系规划——LLM-as-Judge 评审系统设计与四个组件仓库计划（题目 / 实验组 / 对照组 / 评审） |
 
 ---
 
