@@ -4,6 +4,13 @@ All notable changes to the AgentCortex project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [Unreleased]
+
+### 新增（Agent 进驻子项目：AGENTS.md 与 .pi 软链接）
+
+- **为什么改**：用户 2026-10-17 修订「智能体专属文件」归属规则（取代 2026-10-12「子项目一律不得存在」）——子项目不再携带实体文件，改为在根目录挂两条相对路径软链接指回负责的 Agent 项目（`AGENTS.md → ../NeuralCoreAgent/AGENTS.md`、`.pi → ../NeuralCoreAgent/.pi`），在子项目目录开会话即继承 Ada 的身份 / 规则 / 技能；链接随仓库提交，作为团队网络关联的组成部分。
+- **改了什么**：新增项目根软链接 `AGENTS.md` → `../NeuralCoreAgent/AGENTS.md`、`.pi` → `../NeuralCoreAgent/.pi`（相对路径，随仓库提交；单独 clone 到别处时链接悬空、无害）。
+
 ## [1.0.1] - 2026-10-12
 
 ### 移除（智能体专属文件清理：CLAUDE.md 与 AGENTS.md 软链）
