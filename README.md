@@ -5,7 +5,7 @@
 # AgentCortex
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Version](https://img.shields.io/badge/Version-v1.0.1-brightgreen)](./VERSION)
+[![Version](https://img.shields.io/badge/Version-v1.0.2-brightgreen)](./VERSION)
 [![GitHub Issues](https://img.shields.io/github/issues/xhqing/AgentCortex)](https://github.com/xhqing/AgentCortex/issues)
 <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/AgentCortex.json" alt="Visits/day (14d)" />
 
