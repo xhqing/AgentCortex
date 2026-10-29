@@ -4,6 +4,14 @@ All notable changes to the AgentCortex project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [未发布]
+
+### 变更（`.pi` 由软链接改为真实目录 + 资源引用：全局规矩 2026-10-30 修订）
+
+- **为什么改**：2026-10-30 用户修订子项目智能体专属文件规则。旧形态把 `.pi` 整个挂成指向 `../NeuralCoreAgent/.pi` 的软链接，「共享」与「独占」压在同一个符号上——本仓要放自己的配置时无处安放，硬写进 `.pi` 就等于直接写进 NeuralCoreAgent，会瞬间影响它名下全部兄弟子项目，并混入该仓的 git 历史。新规则分层处理：身份层继续保持软链接一致（pi 的上下文文件只从全局 + 逐级祖先目录 + 当前目录加载、没有 include 机制，做超集只能靠复制，复制必然随 Agent 侧演进而漂移）；能力层改在子项目里建真实 `.pi/` 目录，用 `settings.json` 以**路径引用** Agent 项目的资源目录，本地专属内容放自己的目录——行为上是超集，结构上无副本、不漂移，且本仓写自己的 `.pi` 不再污染 Agent 项目与兄弟子项目。
+- **改了什么**：删除项目根 `.pi` 软链接（原指向 `../NeuralCoreAgent/.pi`，用 `unlink` 只删链接本身，NeuralCoreAgent 的 `.pi` 未受影响），改为真实目录并新增 `.pi/settings.json`：`extensions` / `skills` / `prompts` / `themes` 四组各指向 `~/Developer/NeuralCoreAgent/.pi/` 下对应目录，并附带本地 `./extensions` / `./skills` / `./prompts` / `./themes`（本地目录尚未创建，pi 对不存在的资源路径自动跳过）。`AGENTS.md` 软链接保持不变（仍指 `../NeuralCoreAgent/AGENTS.md`）。
+- **规则出处**：全局 `~/.pi/agent/docs/agents-registry.md`「智能体专属文件归属与子项目映射（2026-10-30 修订）」节；依据 pi 文档 `settings.md`「Resources」（项目 `.pi/settings.json` 的路径相对 `.pi` 解析、支持 `~`、路径可为目录并递归收集）、`skills.md` / `extensions.md`（`.pi/{skills,extensions,prompts,themes}` 的自动发现照常生效）、`usage.md`「System Prompt Files」。
+
 ## [1.0.2] - 2026-10-17
 
 ### 新增（Agent 进驻子项目：AGENTS.md 与 .pi 软链接）
