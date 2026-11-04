@@ -12,6 +12,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## [未发布]
 
+### 变更（移除访问量徽章，配合停用集中式流量采集）
+
+- **为什么改**：用户 2026-11-04 决定停用 xhqing 仓库的集中式访问量采集，同时不再在各仓库 README 展示访问量徽章。徽章的数据源必须由采集任务每天刷新，采集停掉之后徽章会冻结在旧值，而徽章文案写的是「Visits/day (14d)」——数字不再更新却仍显示成实时数据，留着反而误导读者。
+- **改了什么**：`README.md` / `README_cn.md` 顶部徽章区删除那一枚 shields.io 访问量徽章（整行删除，数据源 `https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/<仓库名>.json`）；License / Version / Type 等其它徽章与正文一个字未动。
+- **回归检查**：只删这一整行，徽章区所在的 `<p align="center">` / `<div>` 结构与相邻徽章不受影响；README 其余内容零改动。
+
 ### 变更（`.pi` 由软链接改为真实目录 + 资源引用：全局规矩 2026-10-30 修订）
 
 - **为什么改**：2026-10-30 用户修订子项目智能体专属文件规则。旧形态把 `.pi` 整个挂成指向 `../NeuralCoreAgent/.pi` 的软链接，「共享」与「独占」压在同一个符号上——本仓要放自己的配置时无处安放，硬写进 `.pi` 就等于直接写进 NeuralCoreAgent，会瞬间影响它名下全部兄弟子项目，并混入该仓的 git 历史。新规则分层处理：身份层继续保持软链接一致（pi 的上下文文件只从全局 + 逐级祖先目录 + 当前目录加载、没有 include 机制，做超集只能靠复制，复制必然随 Agent 侧演进而漂移）；能力层改在子项目里建真实 `.pi/` 目录，用 `settings.json` 以**路径引用** Agent 项目的资源目录，本地专属内容放自己的目录——行为上是超集，结构上无副本、不漂移，且本仓写自己的 `.pi` 不再污染 Agent 项目与兄弟子项目。
