@@ -12,6 +12,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 
 ## [未发布]
 
+### 新增（`.pi/APPEND_SYSTEM.md`：Worker 会话的项目硬规则）
+
+- **为什么改**：用户 2026-11-07 定下全局 Leader / Worker 分工——子项目的具体活由以子项目根 / worktree 为工作目录的 Worker 会话承担，Leader 只做 local main 同步、建 worktree、派活与收尾。Worker 会话读不到 Agent 项目那一层的上下文，本仓特有的硬规则必须落在本仓，由 pi 在会话启动时自动追加进系统提示；否则 Worker 只能靠 Leader 口头交代，规则随任务结束即丢失。
+- **改了什么**（2026-11-07）：新增 `.pi/APPEND_SYSTEM.md`（50 行）。只写本项目特有的约束：Worker 角色边界（不碰 local main、不建 / 删 worktree）、规则正文是注入 system prompt 的提示词而非说明文、一套引擎一个文件不合并不抽公共片段、章节骨架与四步思维架构名称固定、独有协议与轮次下限 / 语言一致性不得跨引擎移植、输出隔离五条不许弱化、中英同轮改、README 对比表同步；末尾附可直接跑的核对命令与当前基线（Pro 5 个 `##` / 9 条 `*`，Flash 6 / 14，GLM 7 / 18）。通用身份与全局规则仍由 `AGENTS.md` 软链接提供，此处不重述。
+- **边界**：不改任何规则文件与 README，纯新增一份会话层配置；`.pi/` 是 pi 的配置目录，`APPEND_SYSTEM.md` 属其白名单内的「追加系统提示」文件（见全局 `~/.pi/agent/AGENTS.md` 的 `.pi/` 白名单条）。
+
 ### 变更（移除访问量徽章，配合停用集中式流量采集）
 
 - **为什么改**：用户 2026-11-04 决定停用 xhqing 仓库的集中式访问量采集，同时不再在各仓库 README 展示访问量徽章。徽章的数据源必须由采集任务每天刷新，采集停掉之后徽章会冻结在旧值，而徽章文案写的是「Visits/day (14d)」——数字不再更新却仍显示成实时数据，留着反而误导读者。
