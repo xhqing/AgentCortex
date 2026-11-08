@@ -148,6 +148,6 @@ See the [LICENSE.md](./LICENSE.md) file for details.
 
 **Copyright (c) 2026 xhqing <https://github.com/xhqing>**
 
-**Attribution**: If you reference, build upon, or redistribute this project, please retain the above copyright notice and indicate the source. This project is a collective effort — individual contributors are acknowledged collectively as "All Contributors" rather than listed by name.
+**Attribution**: If you reference, build upon, or redistribute this project, please retain the above copyright notice and indicate the source.
 
 **Project URL**: <https://github.com/xhqing/AgentCortex>
