@@ -146,7 +146,7 @@ MIT is a permissive software license that allows free use, modification, distrib
 
 See the [LICENSE.md](./LICENSE.md) file for details.
 
-**Copyright (c) 2026 xhqing <https://github.com/xhqing>**
+**Copyright (c) 2026 xhqing and contributors**
 
 **Attribution**: If you reference, build upon, or redistribute this project, please retain the above copyright notice and indicate the source.
 
